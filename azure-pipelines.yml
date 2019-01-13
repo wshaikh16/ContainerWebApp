@@ -32,7 +32,7 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish ARM template'
   inputs:
-    PathtoPublish: '$(build.sourcesDirectory)/ContainerWebApp/ContainerWebApp.ResourceGroup/'
+    PathtoPublish: 'ContainerWebApp.ResourceGroup'
     ArtifactName: template
 
     
