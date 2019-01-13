@@ -18,7 +18,7 @@ steps:
     azureSubscriptionEndpoint: 'Azure Sponsorship'
     azureContainerRegistry: jakob.azurecr.io
     dockerFile: ContainerWebApp/Dockerfile
-    useDefaultContext: true
+    useDefaultContext: false
     imageName: 'containerwebapp:$(Build.BuildNumber)'
 
 - task: Docker@1
