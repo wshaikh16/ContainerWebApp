@@ -77,7 +77,6 @@
         "siteConfig": {
           "DOCKER_CUSTOM_IMAGE_NAME": "containerwebapp"
         }
-      },
       }
     },
     {
