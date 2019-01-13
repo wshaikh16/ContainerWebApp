@@ -28,3 +28,11 @@ steps:
     azureContainerRegistry: jakob.azurecr.io
     command: 'Push an image'
     imageName: 'containerwebapp:$(Build.BuildNumber)'    
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish ARM template'
+  inputs:
+    PathtoPublish: 'ContainerWebApp/ContainerWebApp.ResourceGroup'
+    ArtifactName: template
+
+    
