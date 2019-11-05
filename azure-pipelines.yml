@@ -13,7 +13,7 @@ pool:
 
 steps:
 - task: Docker@1
-  displayName: 'Build image'
+  displayName: 'Build image'.
   inputs:
     azureSubscriptionEndpoint: 'fgids00502conn'
     azureContainerRegistry: expsettingregistry.azurecr.io
