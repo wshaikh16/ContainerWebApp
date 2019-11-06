@@ -13,21 +13,16 @@ pool:
 
 steps:
 - task: Docker@1
-  displayName: 'Build image'
+  displayName: Build and Push image
   inputs:
     azureSubscriptionEndpoint: 'fgids00502connection'
     azureContainerRegistry: expsettingregistry.azurecr.io
     dockerFile: ContainerWebApp/Dockerfile
     useDefaultContext: false
+    command: 'buildAndPush'
     imageName: 'containerwebapp:$(Build.BuildNumber)'
-
-- task: Docker@1
-  displayName: 'Push image'
-  inputs:
-    azureSubscriptionEndpoint: 'fgids00502connection'
-    azureContainerRegistry: expsettingregistry.azurecr.io
-    command: 'Push an image'
-    imageName: 'containerwebapp:$(Build.BuildNumber)'    
+    tags: |
+     $(tag)
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish ARM template'
