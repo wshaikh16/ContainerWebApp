@@ -15,7 +15,7 @@ steps:
 - task: Docker@1
   displayName: 'Build image'
   inputs:
-    azureSubscriptionEndpoint: 'fgids00502conn'
+    azureSubscriptionEndpoint: 'fgids00502connection'
     azureContainerRegistry: expsettingregistry.azurecr.io
     dockerFile: ContainerWebApp/Dockerfile
     useDefaultContext: false
@@ -24,7 +24,7 @@ steps:
 - task: Docker@1
   displayName: 'Push image'
   inputs:
-    azureSubscriptionEndpoint: 'fgids00502conn'
+    azureSubscriptionEndpoint: 'fgids00502connection'
     azureContainerRegistry: expsettingregistry.azurecr.io
     command: 'Push an image'
     imageName: 'containerwebapp:$(Build.BuildNumber)'    
