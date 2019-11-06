@@ -25,7 +25,7 @@ stages:
       inputs:
         azureSubscriptionEndpoint: 'fgids00502connection'
         azureContainerRegistry: expsettingregistry.azurecr.io
-        command: 'Push an image'
+        command: 'buildAndPush'
         imageName: 'containerwebapp:$(Build.BuildNumber)'    
         dockerfile: '**/Dockerfile'
         tags: |
