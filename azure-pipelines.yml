@@ -20,7 +20,6 @@ steps:
     dockerFile: ContainerWebApp/Dockerfile
     useDefaultContext: false
     imageName: 'containerwebapp:$(Build.BuildNumber)'
-
 - task: Docker@1
   displayName: 'Push image'
   inputs:
