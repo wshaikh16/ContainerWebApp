@@ -3,10 +3,11 @@
 # Add steps that use Docker Compose, tag images, push to a registry, run an image, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
-name: 1.0$(rev:.r)
-
 trigger:
 - master
+
+variables:
+  tag: '$(Build.BuildId)'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -17,9 +18,9 @@ steps:
   inputs:
     azureSubscriptionEndpoint: 'fgids00502connection'
     azureContainerRegistry: expsettingregistry.azurecr.io
-    dockerFile: ContainerWebApp/Dockerfile
     useDefaultContext: false
-    imageName: 'containerwebapp:$(Build.BuildNumber)'
+    imageName: 'containerwebapp'
+    dockerFile: ContainerWebApp/Dockerfile
 
 - task: Docker@1
   displayName: 'Push image'
@@ -27,7 +28,7 @@ steps:
     azureSubscriptionEndpoint: 'fgids00502connection'
     azureContainerRegistry: expsettingregistry.azurecr.io
     command: 'Push an image'
-    imageName: 'containerwebapp:$(Build.BuildNumber)'    
+    imageName: 'containerwebapp'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish ARM template'
