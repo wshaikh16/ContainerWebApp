@@ -21,7 +21,7 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
-      displayName: Build and push image
+      displayName: Build and Push image.
       inputs:
         containerRegistry: 'ACRServiceConnection'
         repository: containerwebapp
