@@ -23,7 +23,7 @@ stages:
     - task: Docker@2
       displayName: Build and Push image.
       inputs:
-        containerRegistry: 'ACRServiceConnection'
+        containerRegistry: 'testconn'
         repository: containerwebapp
         command: 'buildAndPush'
         dockerfile: '**/Dockerfile'
